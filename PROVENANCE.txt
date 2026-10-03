@@ -1,0 +1,79 @@
+FFX-trans v1.0.0 - component provenance
+Reviewed 2026-10-03
+
+PROJECT
+https://github.com/deymon28/FFX-trans
+Project-authored installer scripts, tests, tools, and documentation: MIT (LICENSE).
+Third-party components are excluded from that license; see THIRD_PARTY_NOTICES.md.
+
+TRANSLATION PAYLOADS
+Credited team: AlchemistLab
+https://vk.com/club108745115
+Attribution reference (historic instructions for a different installer):
+https://steamcommunity.com/sharedfiles/filedetails/?id=3173872912
+
+The two supplied patches are preserved byte-for-byte. The original installer was
+not independently re-extracted during preparation of this public release.
+No separate translation redistribution license was provided with these payloads.
+Their exact translation revision and complete individual contributor list have
+not been independently established. No additional rights are granted here.
+
+FFX Patch.vcdiff
+Bytes: 36422697
+SHA-256: f325560daa5766d849bed22b4b8a45f590343ca327db32d17b3c91345806414c
+
+metamenu patch.vcdiff
+Bytes: 4887917
+SHA-256: 513d9f96cad2288c781022ae0c7bb1b6f9bcf8c3dca30348629fba3272001ce4
+
+Compatible original game files (MD5):
+FFX_Data.vbf: DBB4ADAF14FBC80D631266A876D00892
+metamenu.vbf: 535BBD83176480ABCA1D1AAF33DF0091
+Declared output lengths: 20799140005 and 21768300 bytes, respectively.
+The supplied VCDIFF data uses DJW secondary compression and window Adler-32.
+Application headers retain generic historic M:\ drive paths, without usernames.
+Original or translated whole game archives are not distributed by this project.
+
+XDELTA DECODER
+Joshua MacDonald and Xdelta contributors
+https://github.com/jmacd/xdelta
+https://github.com/jmacd/xdelta/releases/tag/v3.2.0
+https://jmacd.github.io/xdelta/
+
+Official Windows x64 release ZIP, distributed unmodified:
+https://github.com/jmacd/xdelta/releases/download/v3.2.0/xdelta3-3.2.0-windows-x86_64.zip
+Bytes: 184417
+SHA-256: 8aca331c3d49ec4465ee8f3f7e3afb92e06d36e32fdec422c3252aaa813a7d2a
+This digest was checked against the actual downloaded bytes and GitHub's release
+API asset digest on 2026-10-03 (asset ID 593384576):
+https://api.github.com/repos/jmacd/xdelta/releases/tags/v3.2.0
+
+Executed entry: xdelta3-3.2.0-windows-x86_64/xdelta3.exe
+Bytes: 336896
+SHA-256: 6e812b38484d0c764291779fadee83ffbe2eceaccb4e3a21f8a043a02654a01e
+
+The ZIP also contains README.md and xdelta3decode.exe. The installer does not
+extract or execute the minimal xdelta3decode.exe; full DJW support is required.
+No upstream binary was modified. Xdelta is licensed under Apache-2.0;
+XDELTA_LICENSE.txt is byte-identical to LICENSE in the source asset below.
+
+Corresponding source asset, linked for reference rather than redistributed:
+https://github.com/jmacd/xdelta/releases/download/v3.2.0/xdelta3-3.2.0.tar.gz
+Bytes: 330627
+SHA-256: 628cfa920fb5cf9f0c61b2c91a036b713fc08c7858fc53f1cc87e0921d74ffa1
+Source digest also matched the GitHub release API and downloaded bytes on review.
+Upstream source dependency defaults: BLAKE3 1.8.5 and XZ/liblzma v5.8.3.
+Their original license texts are included under licenses/; see the linked
+THIRD_PARTY_NOTICES.md entries for authors and versioned sources.
+Release files may be replaced upstream under the same version and filename;
+always identify this distribution by its recorded digests, not version alone.
+
+EXCLUSIONS AND VERIFICATION
+The original FFXRUS_PC.exe and legacy Xdelta 3.0.4 are excluded. This package
+contains native executable content inside the official ZIP; scripts are also
+executable code. The package is not described as executable-free or certified safe.
+
+SHA256SUMS.txt is an integrity manifest for runtime release files, not a digital
+signature. docs/VERIFICATION.md records dated native/fixture/antivirus checks
+and their limitations. No complete playthrough or independent audit of all
+upstream decoder source code or translation content is claimed.

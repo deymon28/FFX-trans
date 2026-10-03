@@ -1,0 +1,41 @@
+name: Verify package
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Verify package and manifest
+        shell: powershell
+        run: |
+          & .\verify_package.ps1
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          & .\tools\update-manifest.ps1 -Check
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Test installer and native DJW roundtrip
+        shell: powershell
+        run: |
+          & .\tests\run-tests.ps1 -NativeDecoder
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Build and verify release package
+        shell: powershell
+        run: |
+          & .\tests\package\run-package-tests.ps1
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Build runtime release
+        shell: powershell
+        run: |
+          & .\tools\build-release.ps1 -Version 1.0.0
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

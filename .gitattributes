@@ -1,0 +1,9 @@
+* text=auto eol=lf
+*.cmd -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+*.vcdiff binary
+*.zip binary
+*.gz binary
+XDELTA_LICENSE.txt -text
+licenses/*.txt -text
+# Preserve the upstream license's trailing blank line byte-for-byte.
+licenses/XZ_COPYING.txt whitespace=-blank-at-eof

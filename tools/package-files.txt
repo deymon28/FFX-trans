@@ -1,0 +1,23 @@
+# Release contents only. Paths are relative to the repository root, with / separators.
+# SHA256SUMS.txt is included separately; it must list exactly the files below.
+check_install.cmd
+install_ru.cmd
+install_ru.ps1
+restore_original.cmd
+restore_original.ps1
+patch_core.psm1
+decoder.ps1
+FFX Patch.vcdiff
+metamenu patch.vcdiff
+xdelta3-3.2.0-windows-x86_64.zip
+verify_package.ps1
+README.md
+PROVENANCE.txt
+LICENSE
+THIRD_PARTY_NOTICES.md
+XDELTA_LICENSE.txt
+licenses/BLAKE3_Apache-2.0.txt
+licenses/XZ_COPYING.txt
+licenses/XZ_0BSD.txt
+SECURITY.md
+docs/VERIFICATION.md

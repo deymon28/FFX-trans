@@ -1,0 +1,32 @@
+# Local preparation, test fixtures, logs, and generated release archives.
+.local/
+dist/
+TestResults/
+*.log
+*.tmp
+__pycache__/
+.venv/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Never publish credentials, local settings, game files, saves, or backups.
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+*.vbf
+*.alchemistlab_original
+*.alchemistlab_pending
+.alchemistlab.lock
+*.sav
+*.dmp
+
+# The pinned upstream Windows ZIP is the only distributed executable archive.
+*.exe
+*.dll
+*.zip
+!xdelta3-3.2.0-windows-x86_64.zip
+*.tar.gz
